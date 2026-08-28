@@ -172,3 +172,18 @@ void printTree( TreeNode * tree )
   }
   UNINDENT;
 }
+
+/* Procedure printLine prints a full line
+ * of the source code, with its number
+ * reduntand_source is ANOTHER instance 
+ * of file pointer opened with the source code.
+ */
+void printLine(FILE* redundant_source){
+  char line[1024];
+  char *ret = fgets(line, 1024, redundant_source);
+  // If an error occurs, or if end-of-file is reached and no characters were read, fgets returns NULL.
+  if (ret) { pc( "%d: %-1s",lineno, line); 
+             // if EOF, the string does not contain \n. add it to separate from EOF token
+             if (feof(redundant_source)) pc("\n");
+           } 
+}

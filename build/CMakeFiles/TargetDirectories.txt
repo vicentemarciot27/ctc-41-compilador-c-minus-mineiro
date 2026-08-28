@@ -1,0 +1,8 @@
+/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/mycmcomp.dir
+/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/runmycmcomp.dir
+/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/rundiff.dir
+/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/ddiff.dir
+/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/lexdiff.dir
+/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/tiny.dir
+/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/edit_cache.dir
+/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/rebuild_cache.dir

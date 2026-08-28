@@ -14,23 +14,31 @@
  */
 void printToken( TokenType token, const char* tokenString )
 { switch (token)
-  { case IF:
-    case THEN:
+  { 
     case ELSE:
-    case END:
-    case REPEAT:
-    case UNTIL:
-    case READ:
-    case WRITE:
+    case IF:
+    case INT:
+    case RETURN:
+    case VOID:
+    case WHILE:
       pc(
          "reserved word: %s\n",tokenString);
       break;
-    case ASSIGN: pc(":=\n"); break;
+    case ASSIGN: pc("=\n"); break;
     case LT: pc("<\n"); break;
-    case EQ: pc("=\n"); break;
+    case LEQ: pc("<=\n"); break;
+    case GT: pc(">\n"); break;
+    case GEQ: pc(">=\n"); break;
+    case EQ: pc("==\n"); break;
+    case NEQ: pc("!=\n"); break;
     case LPAREN: pc("(\n"); break;
     case RPAREN: pc(")\n"); break;
+    case LBRACK: pc("[\n"); break;
+    case RBRACK: pc("]\n"); break;
+    case LBRACE: pc("{\n"); break;
+    case RBRACE: pc("}\n"); break;
     case SEMI: pc(";\n"); break;
+    case COMMA: pc(",\n"); break;
     case PLUS: pc("+\n"); break;
     case MINUS: pc("-\n"); break;
     case TIMES: pc("*\n"); break;
@@ -171,4 +179,19 @@ void printTree( TreeNode * tree )
     tree = tree->sibling;
   }
   UNINDENT;
+}
+
+/* Procedure printLine prints a full line
+ * of the source code, with its number
+ * reduntand_source is ANOTHER instance 
+ * of file pointer opened with the source code.
+ */
+void printLine(FILE* redundant_source){
+  char line[1024];
+  char *ret = fgets(line, 1024, redundant_source);
+  // If an error occurs, or if end-of-file is reached and no characters were read, fgets returns NULL.
+  if (ret) { pc( "%d: %-1s",lineno, line); 
+             // if EOF, the string does not contain \n. add it to separate from EOF token
+             if (feof(redundant_source)) pc("\n");
+           } 
 }

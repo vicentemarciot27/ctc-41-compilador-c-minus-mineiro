@@ -1,0 +1,80 @@
+/****************************************************/
+/* File: cminus.l                                   */
+/* Lex specification for C-                         */
+/* Project for CES41: Compiladores                  */
+/****************************************************/
+
+%option noyywrap 
+/* opção noyywrap pode ser necessária para novas versões do flex
+  limitação: não compila mais de um arquivo fonte de uma só vez (não precisamos disso)
+  https://stackoverflow.com/questions/1480138/undefined-reference-to-yylex 
+*/ 
+
+%{
+#include "globals.h"
+#include "util.h"
+#include "scan.h"
+/* lexeme of identifier or reserved word */
+char tokenString[MAXTOKENLEN+1];
+%}
+digit       [0-9]
+number      {digit}+
+letter      [a-zA-Z]
+identifier  {letter}+
+newline     \n
+whitespace  [ \t]+
+comment     \/\*([^*]|\*+[^*/])*\*+\/
+%%
+"ahh_sai_fora_ze"        {return ELSE;}
+"uai_se"                 {return IF;}
+"trem"                   {return INT;}
+"vorta"                  {return RETURN;}
+"nadica"                 {return VOID;}
+"peleja"                 {return WHILE;}
+"="             {return ASSIGN;}
+"+"             {return PLUS;}
+"-"             {return MINUS;}
+"*"             {return TIMES;}
+"/"             {return OVER;}
+"<"             {return LT;}
+"<="            {return LEQ;}
+">"             {return GT;}
+">="            {return GEQ;}
+"=="            {return EQ;}
+"!="            {return NEQ;}
+";"             {return SEMI;}
+","             {return COMMA;}
+"("             {return LPAREN;}
+")"             {return RPAREN;}
+"["             {return LBRACK;}
+"]"             {return RBRACK;}
+"{"             {return LBRACE;}
+"}"             {return RBRACE;}
+{number}        {return NUM;}
+{identifier}    {return ID;}
+{comment}       {
+                  for (int i = 0; yytext[i] != '\0'; i++) {
+                      if (yytext[i] == '\n') lineno++;
+                  }
+                }
+{newline}       {lineno++;}
+{whitespace}    {/* skip whitespace */}
+.               {return ERROR;}
+%%
+TokenType getToken(void)
+{ static int firstTime = TRUE;
+  TokenType currentToken;
+  if (firstTime)
+  { firstTime = FALSE;
+    lineno++;
+    yyin = source;
+    yyout = listing;
+  }
+  currentToken = yylex();
+  strncpy(tokenString,yytext,MAXTOKENLEN);
+  if (TraceScan) {
+    pc("\t%d: ",lineno);
+    printToken(currentToken,tokenString);
+  }
+  return currentToken;
+}

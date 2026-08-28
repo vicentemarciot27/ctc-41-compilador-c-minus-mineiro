@@ -21,42 +21,49 @@ digit       [0-9]
 number      {digit}+
 letter      [a-zA-Z]
 identifier  {letter}+
-newline     \n
-whitespace  [ \t]+
+newline     \r?\n
+whitespace  [ \t\r]+
+comment     \/\*([^*]|\*+[^*/])*\*+\/
 %%
-"if"            {return IF;}
-"then"          {return THEN;}
 "else"          {return ELSE;}
-"end"           {return END;}
-"repeat"        {return REPEAT;}
-"until"         {return UNTIL;}
-"read"          {return READ;}
-"write"         {return WRITE;}
-":="            {return ASSIGN;}
-"="             {return EQ;}
-"<"             {return LT;}
+"if"            {return IF;}
+"int"           {return INT;}
+"return"        {return RETURN;}
+"void"          {return VOID;}
+"while"         {return WHILE;}
+"="             {return ASSIGN;}
 "+"             {return PLUS;}
 "-"             {return MINUS;}
 "*"             {return TIMES;}
 "/"             {return OVER;}
+"<"             {return LT;}
+"<="            {return LEQ;}
+">"             {return GT;}
+">="            {return GEQ;}
+"=="            {return EQ;}
+"!="            {return NEQ;}
+";"             {return SEMI;}
+","             {return COMMA;}
 "("             {return LPAREN;}
 ")"             {return RPAREN;}
-";"             {return SEMI;}
+"["             {return LBRACK;}
+"]"             {return RBRACK;}
+"{"             {return LBRACE;}
+"}"             {return RBRACE;}
 {number}        {return NUM;}
 {identifier}    {return ID;}
+{comment}       {
+                  for (int i = 0; yytext[i] != '\0'; i++) {
+                      if (yytext[i] == '\n') lineno++;
+                  }
+                }
 {newline}       {lineno++;}
 {whitespace}    {/* skip whitespace */}
-"{"             { char c;
-                  do
-                  { c = input();
-                    if (c == EOF) break;
-                    if (c == '\n') lineno++;
-                  } while (c != '}');
-                }
 .               {return ERROR;}
 %%
 TokenType getToken(void)
 { static int firstTime = TRUE;
+  static int lastPrintedLine = 0;
   TokenType currentToken;
   if (firstTime)
   { firstTime = FALSE;
@@ -65,10 +72,27 @@ TokenType getToken(void)
     yyout = listing;
   }
   currentToken = yylex();
-  strncpy(tokenString,yytext,MAXTOKENLEN);
+
+  if (currentToken != ENDFILE && yytext != NULL) {
+      strncpy(tokenString, yytext, MAXTOKENLEN);
+      tokenString[MAXTOKENLEN] = '\0';
+    } else {
+      tokenString[0] = '\0';
+  }
+
+  if (EchoSource) {
+    while (lastPrintedLine < lineno) {
+      lastPrintedLine++;
+      int tempLineno = lineno;
+      lineno = lastPrintedLine;
+      printLine(redundant_source);
+      lineno = tempLineno;
+    }
+  }
+
   if (TraceScan) {
-    pc("\t%d: ",lineno);
-    printToken(currentToken,tokenString);
+    pc("\t%d: ", lineno);
+    printToken(currentToken, tokenString);
   }
   return currentToken;
 }

@@ -30,14 +30,15 @@ typedef enum
     /* book-keeping tokens */
    {ENDFILE,ERROR,
     /* reserved words */
-    IF,THEN,ELSE,END,REPEAT,UNTIL,READ,WRITE,
-    /* multicharacter tokens */
+    ELSE,IF,INT,RETURN,VOID,WHILE,
+    /* multi character*/
     ID,NUM,
     /* special symbols */
-    ASSIGN,EQ,LT,PLUS,MINUS,TIMES,OVER,LPAREN,RPAREN,SEMI
+    ASSIGN,PLUS,MINUS,TIMES,OVER,LT,LEQ,GT,GEQ,EQ,NEQ,SEMI,COMMA,LPAREN,RPAREN,LBRACK,RBRACK,LBRACE,RBRACE
    } TokenType;
 
 extern FILE* source; /* source code text file */
+extern FILE* redundant_source;
 extern FILE* listing; /* listing output text file */
 extern FILE* code; /* code text file for TM simulator */
 

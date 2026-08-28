@@ -33,6 +33,7 @@
 /* allocate global variables */
 int lineno = 0;
 FILE * source;
+FILE * redundant_source;
 FILE * listing;
 FILE * code;
 
@@ -60,6 +61,7 @@ int main( int argc, char * argv[] )
         strcat(pgm,".cm");// if no extension is given, append .cm (c minus) to the filename
     source = fopen(pgm,"r");
     //redundant_source = fopen(pgm, "r"); <- use redundant_source to print whole lines in lex output
+    redundant_source = fopen(pgm, "r");
     if (source==NULL)
     { fprintf(stderr,"File %s not found\n",pgm);
         exit(1);
@@ -72,7 +74,7 @@ int main( int argc, char * argv[] )
     //// end opening sources ////
     
     listing = stdout; /* send messages from main() to screen */
-    initializePrinter(detailpath, pgm, LER);// init logger in /lib/log.c
+    initializePrinter(detailpath, pgm, LOGALL);// init logger in /lib/log.c
     // for the lexical analysis, you might change LOGALL to LER, to generate only lex and err outputs.
     
   fprintf(listing,"\nCOMPILATION: %s\n",pgm); // messages on stderr are useful only when calling the compiler manually.
@@ -104,6 +106,7 @@ int main( int argc, char * argv[] )
 #endif
 #endif
   fclose(source);
+  fclose(redundant_source);
   closePrinter();
   return 0;
 }

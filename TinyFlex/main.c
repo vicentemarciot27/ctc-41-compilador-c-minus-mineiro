@@ -33,6 +33,7 @@
 /* allocate global variables */
 int lineno = 0;
 FILE * source;
+FILE * redundant_source;
 FILE * listing;
 FILE * code;
 
@@ -60,6 +61,7 @@ int main( int argc, char * argv[] )
         strcat(pgm,".cm");// if no extension is given, append .cm (c minus) to the filename
     source = fopen(pgm,"r");
     //redundant_source = fopen(pgm, "r"); <- use redundant_source to print whole lines in lex output
+    redundant_source = fopen(pgm, "r");
     if (source==NULL)
     { fprintf(stderr,"File %s not found\n",pgm);
         exit(1);
