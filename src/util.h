@@ -33,4 +33,10 @@ char * copyString( char * );
  */
 void printTree( TreeNode * );
 
+/* Procedure printLine prints the next full line of the
+ * source code, prefixed by its number. redundant_source is
+ * ANOTHER file pointer opened on the same source file.
+ */
+void printLine( FILE * );
+
 #endif
