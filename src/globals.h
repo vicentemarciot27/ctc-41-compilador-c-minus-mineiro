@@ -26,16 +26,12 @@
 /* MAXRESERVED = the number of reserved words */
 #define MAXRESERVED 8
 
-typedef enum 
-    /* book-keeping tokens */
-   {ENDFILE,ERROR,
-    /* reserved words */
-    ELSE,IF,INT,RETURN,VOID,WHILE,
-    /* multi character*/
-    ID,NUM,
-    /* special symbols */
-    ASSIGN,PLUS,MINUS,TIMES,OVER,LT,LEQ,GT,GEQ,EQ,NEQ,SEMI,COMMA,LPAREN,RPAREN,LBRACK,RBRACK,LBRACE,RBRACE
-   } TokenType;
+/* Bison owns the token numbers when the syntax analyzer is enabled. */
+#ifndef YYPARSER
+#include "parser.h"
+#endif
+#define ENDFILE 0
+typedef int TokenType;
 
 extern FILE* source; /* source code text file */
 extern FILE* redundant_source;
@@ -48,9 +44,10 @@ extern int lineno; /* source line number for listing */
 /***********   Syntax tree for parsing ************/
 /**************************************************/
 
-typedef enum {StmtK,ExpK} NodeKind;
-typedef enum {IfK,RepeatK,AssignK,ReadK,WriteK} StmtKind;
-typedef enum {OpK,ConstK,IdK} ExpKind;
+typedef enum {StmtK,ExpK,DeclK} NodeKind;
+typedef enum {IfK,WhileK,AssignK,ReturnK,BlockK} StmtKind;
+typedef enum {OpK,ConstK,IdK,CallK} ExpKind;
+typedef enum {VarK,ArrayK,FunK,ParamVarK,ParamArrayK} DeclKind;
 
 /* ExpType is used for type checking */
 typedef enum {Void,Integer,Boolean} ExpType;
@@ -62,11 +59,12 @@ typedef struct treeNode
      struct treeNode * sibling;
      int lineno;
      NodeKind nodekind;
-     union { StmtKind stmt; ExpKind exp;} kind;
+     union { StmtKind stmt; ExpKind exp; DeclKind decl;} kind;
      union { TokenType op;
              int val;
              char * name; } attr;
      ExpType type; /* for type checking of exps */
+     int unary; /* distinguishes unary minus from subtraction */
    } TreeNode;
 
 /**************************************************/

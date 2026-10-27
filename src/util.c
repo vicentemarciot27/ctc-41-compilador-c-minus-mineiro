@@ -72,6 +72,8 @@ TreeNode * newStmtNode(StmtKind kind)
     t->nodekind = StmtK;
     t->kind.stmt = kind;
     t->lineno = lineno;
+    t->type = Void;
+    t->unary = FALSE;
   }
   return t;
 }
@@ -91,6 +93,22 @@ TreeNode * newExpNode(ExpKind kind)
     t->kind.exp = kind;
     t->lineno = lineno;
     t->type = Void;
+    t->unary = FALSE;
+  }
+  return t;
+}
+
+TreeNode * newDeclNode(DeclKind kind)
+{ TreeNode * t = (TreeNode *) malloc(sizeof(TreeNode));
+  if (t==NULL) pce("Out of memory error at line %d\n",lineno);
+  else {
+    for (int i=0;i<MAXCHILDREN;i++) t->child[i] = NULL;
+    t->sibling = NULL;
+    t->lineno = lineno;
+    t->nodekind = DeclK;
+    t->kind.decl = kind;
+    t->type = Void;
+    t->unary = FALSE;
   }
   return t;
 }
@@ -113,11 +131,11 @@ char * copyString(char * s)
 /* Variable indentno is used by printTree to
  * store current number of spaces to indent
  */
-static int indentno = 0;
+static int indentno = -4;
 
 /* macros to increase/decrease indentation */
-#define INDENT indentno+=2
-#define UNINDENT indentno-=2
+#define INDENT indentno+=4
+#define UNINDENT indentno-=4
 
 /* printSpaces indents by printing spaces */
 static void printSpaces(void)
@@ -134,22 +152,32 @@ void printTree( TreeNode * tree )
   INDENT;
   while (tree != NULL) {
     printSpaces();
-    if (tree->nodekind==StmtK)
+    if (tree->nodekind==DeclK)
+    { switch (tree->kind.decl) {
+        case VarK: pc("Declare %s var: %s\n",tree->type == Integer ? "int" : "void",tree->attr.name); break;
+        case ArrayK: pc("Declare %s array: %s\n",tree->type == Integer ? "int" : "void",tree->attr.name); break;
+        case FunK: pc("Declare function (return type \"%s\"): %s\n",
+                      tree->type == Integer ? "int" : "void",tree->attr.name); break;
+        case ParamVarK: pc("Function param (%s var): %s\n",tree->type == Integer ? "int" : "void",tree->attr.name); break;
+        case ParamArrayK: pc("Function param (%s array): %s\n",tree->type == Integer ? "int" : "void",tree->attr.name); break;
+      }
+    }
+    else if (tree->nodekind==StmtK)
     { switch (tree->kind.stmt) {
         case IfK:
-          pc("If\n");
+          pc("Conditional selection\n");
           break;
-        case RepeatK:
-          pc("Repeat\n");
+        case WhileK:
+          pc("Iteration (loop)\n");
           break;
         case AssignK:
-          pc("Assign to: %s\n",tree->attr.name);
+          pc("Assign to %s: %s\n",tree->child[1] ? "array" : "var",tree->attr.name);
           break;
-        case ReadK:
-          pc("Read: %s\n",tree->attr.name);
+        case ReturnK:
+          pc("Return\n");
           break;
-        case WriteK:
-          pc("Write\n");
+        case BlockK:
+          pc("Block:\n");
           break;
         default:
           pce("Unknown ExpNode kind\n");
@@ -159,8 +187,8 @@ void printTree( TreeNode * tree )
     else if (tree->nodekind==ExpK)
     { switch (tree->kind.exp) {
         case OpK:
-          pc("Op: ");
-          printToken(tree->attr.op,"\0");
+          if (tree->unary) pc("Op: - (unario)\n");
+          else { pc("Op: "); printToken(tree->attr.op,"\0"); }
           break;
         case ConstK:
           pc("Const: %d\n",tree->attr.val);
@@ -168,14 +196,34 @@ void printTree( TreeNode * tree )
         case IdK:
           pc("Id: %s\n",tree->attr.name);
           break;
+        case CallK:
+          pc("Function call: %s\n",tree->attr.name);
+          break;
         default:
           pce("Unknown ExpNode kind\n");
           break;
       }
     }
     else pce("Unknown node kind\n");
-    for (i=0;i<MAXCHILDREN;i++)
-         printTree(tree->child[i]);
+    if (tree->nodekind==DeclK && tree->kind.decl==FunK) {
+      printTree(tree->child[0]);
+      if (tree->child[1] && tree->child[1]->kind.stmt==BlockK) {
+        if (tree->child[1]->child[0]) printTree(tree->child[1]->child[0]);
+        else printTree(tree->child[1]);
+      }
+    } else if (tree->nodekind==StmtK &&
+               (tree->kind.stmt==IfK || tree->kind.stmt==WhileK)) {
+      printTree(tree->child[0]);
+      for (i=1;i<MAXCHILDREN;i++) {
+        TreeNode *body = tree->child[i];
+        if (body && body->nodekind==StmtK && body->kind.stmt==BlockK && body->child[0])
+          printTree(body->child[0]);
+        else printTree(body);
+      }
+    } else if (tree->nodekind==StmtK && tree->kind.stmt==AssignK && tree->child[1]) {
+      printTree(tree->child[0]);
+      printTree(tree->child[1]);
+    } else for (i=0;i<MAXCHILDREN;i++) printTree(tree->child[i]);
     tree = tree->sibling;
   }
   UNINDENT;
