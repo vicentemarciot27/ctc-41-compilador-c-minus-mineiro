@@ -53,4 +53,5 @@ CMakeFiles/mycmcomp.dir/src/util.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/string.h /usr/include/strings.h \
  /home/marcio/ITA/Bizarro/projeto1/lib/log.h \
+ /home/marcio/ITA/Bizarro/projeto1/build/parser.h \
  /home/marcio/ITA/Bizarro/projeto1/src/util.h

@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/marcio/ITA/Bizarro/projeto1/build -I/home/marcio/ITA/Bizarro/projeto1/include -I/home/marcio/ITA/Bizarro/projeto1/lib -I/home/marcio/ITA/Bizarro/projeto1/TinyFlex
+C_INCLUDES = -I/home/marcio/ITA/Bizarro/projeto1/build -I/home/marcio/ITA/Bizarro/projeto1/include -I/home/marcio/ITA/Bizarro/projeto1/lib -I/home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo
 
 C_FLAGS = 
 

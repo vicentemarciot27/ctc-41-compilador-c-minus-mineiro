@@ -69,42 +69,105 @@ include CMakeFiles/tiny.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tiny.dir/flags.make
 
-tinylexer.c: /home/marcio/ITA/Bizarro/projeto1/TinyFlex/tiny.l
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[FLEX][tinyscanner] Building scanner with flex 2.6.4"
-	cd /home/marcio/ITA/Bizarro/projeto1 && /usr/bin/flex -o/home/marcio/ITA/Bizarro/projeto1/build/tinylexer.c TinyFlex/tiny.l
+tinyparser.c: /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/tiny.y
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[BISON][tinyparser] Building parser with bison 3.8.2"
+	cd /home/marcio/ITA/Bizarro/projeto1 && /usr/bin/bison -d -o /home/marcio/ITA/Bizarro/projeto1/build/tinyparser.c TinyGeracaoCodigo/tiny.y
 
-CMakeFiles/tiny.dir/TinyFlex/main.c.o: CMakeFiles/tiny.dir/flags.make
-CMakeFiles/tiny.dir/TinyFlex/main.c.o: /home/marcio/ITA/Bizarro/projeto1/TinyFlex/main.c
-CMakeFiles/tiny.dir/TinyFlex/main.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/tiny.dir/TinyFlex/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/TinyFlex/main.c.o -MF CMakeFiles/tiny.dir/TinyFlex/main.c.o.d -o CMakeFiles/tiny.dir/TinyFlex/main.c.o -c /home/marcio/ITA/Bizarro/projeto1/TinyFlex/main.c
+tinyparser.h: tinyparser.c
+	@$(CMAKE_COMMAND) -E touch_nocreate tinyparser.h
 
-CMakeFiles/tiny.dir/TinyFlex/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/TinyFlex/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/TinyFlex/main.c > CMakeFiles/tiny.dir/TinyFlex/main.c.i
+tinylexer.c: /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/tiny.l
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "[FLEX][tinyscanner] Building scanner with flex 2.6.4"
+	cd /home/marcio/ITA/Bizarro/projeto1 && /usr/bin/flex -o/home/marcio/ITA/Bizarro/projeto1/build/tinylexer.c TinyGeracaoCodigo/tiny.l
 
-CMakeFiles/tiny.dir/TinyFlex/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/TinyFlex/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/TinyFlex/main.c -o CMakeFiles/tiny.dir/TinyFlex/main.c.s
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o: CMakeFiles/tiny.dir/flags.make
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o: /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/analyze.c
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o -MF CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o.d -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o -c /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/analyze.c
 
-CMakeFiles/tiny.dir/TinyFlex/util.c.o: CMakeFiles/tiny.dir/flags.make
-CMakeFiles/tiny.dir/TinyFlex/util.c.o: /home/marcio/ITA/Bizarro/projeto1/TinyFlex/util.c
-CMakeFiles/tiny.dir/TinyFlex/util.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/tiny.dir/TinyFlex/util.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/TinyFlex/util.c.o -MF CMakeFiles/tiny.dir/TinyFlex/util.c.o.d -o CMakeFiles/tiny.dir/TinyFlex/util.c.o -c /home/marcio/ITA/Bizarro/projeto1/TinyFlex/util.c
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/analyze.c > CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.i
 
-CMakeFiles/tiny.dir/TinyFlex/util.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/TinyFlex/util.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/TinyFlex/util.c > CMakeFiles/tiny.dir/TinyFlex/util.c.i
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/analyze.c -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.s
 
-CMakeFiles/tiny.dir/TinyFlex/util.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/TinyFlex/util.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/TinyFlex/util.c -o CMakeFiles/tiny.dir/TinyFlex/util.c.s
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o: CMakeFiles/tiny.dir/flags.make
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o: /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/cgen.c
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o -MF CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o.d -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o -c /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/cgen.c
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/cgen.c > CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.i
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/cgen.c -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.s
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o: CMakeFiles/tiny.dir/flags.make
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o: /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/code.c
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o -MF CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o.d -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o -c /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/code.c
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/code.c > CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.i
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/code.c -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.s
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o: CMakeFiles/tiny.dir/flags.make
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o: /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/main.c
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o -MF CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o.d -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o -c /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/main.c
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/main.c > CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.i
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/main.c -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.s
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o: CMakeFiles/tiny.dir/flags.make
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o: /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/symtab.c
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o -MF CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o.d -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o -c /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/symtab.c
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/symtab.c > CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.i
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/symtab.c -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.s
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o: CMakeFiles/tiny.dir/flags.make
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o: /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/util.c
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o -MF CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o.d -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o -c /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/util.c
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/util.c > CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.i
+
+CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/TinyGeracaoCodigo/util.c -o CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.s
 
 CMakeFiles/tiny.dir/lib/log.c.o: CMakeFiles/tiny.dir/flags.make
 CMakeFiles/tiny.dir/lib/log.c.o: /home/marcio/ITA/Bizarro/projeto1/lib/log.c
 CMakeFiles/tiny.dir/lib/log.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/tiny.dir/lib/log.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/tiny.dir/lib/log.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/lib/log.c.o -MF CMakeFiles/tiny.dir/lib/log.c.o.d -o CMakeFiles/tiny.dir/lib/log.c.o -c /home/marcio/ITA/Bizarro/projeto1/lib/log.c
 
 CMakeFiles/tiny.dir/lib/log.c.i: cmake_force
@@ -115,10 +178,25 @@ CMakeFiles/tiny.dir/lib/log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/lib/log.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/lib/log.c -o CMakeFiles/tiny.dir/lib/log.c.s
 
+CMakeFiles/tiny.dir/tinyparser.c.o: CMakeFiles/tiny.dir/flags.make
+CMakeFiles/tiny.dir/tinyparser.c.o: tinyparser.c
+CMakeFiles/tiny.dir/tinyparser.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/tiny.dir/tinyparser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/tinyparser.c.o -MF CMakeFiles/tiny.dir/tinyparser.c.o.d -o CMakeFiles/tiny.dir/tinyparser.c.o -c /home/marcio/ITA/Bizarro/projeto1/build/tinyparser.c
+
+CMakeFiles/tiny.dir/tinyparser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/tiny.dir/tinyparser.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/build/tinyparser.c > CMakeFiles/tiny.dir/tinyparser.c.i
+
+CMakeFiles/tiny.dir/tinyparser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/tiny.dir/tinyparser.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/build/tinyparser.c -o CMakeFiles/tiny.dir/tinyparser.c.s
+
 CMakeFiles/tiny.dir/tinylexer.c.o: CMakeFiles/tiny.dir/flags.make
 CMakeFiles/tiny.dir/tinylexer.c.o: tinylexer.c
+CMakeFiles/tiny.dir/tinylexer.c.o: tinyparser.h
 CMakeFiles/tiny.dir/tinylexer.c.o: CMakeFiles/tiny.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/tiny.dir/tinylexer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/tiny.dir/tinylexer.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tiny.dir/tinylexer.c.o -MF CMakeFiles/tiny.dir/tinylexer.c.o.d -o CMakeFiles/tiny.dir/tinylexer.c.o -c /home/marcio/ITA/Bizarro/projeto1/build/tinylexer.c
 
 CMakeFiles/tiny.dir/tinylexer.c.i: cmake_force
@@ -131,22 +209,31 @@ CMakeFiles/tiny.dir/tinylexer.c.s: cmake_force
 
 # Object files for target tiny
 tiny_OBJECTS = \
-"CMakeFiles/tiny.dir/TinyFlex/main.c.o" \
-"CMakeFiles/tiny.dir/TinyFlex/util.c.o" \
+"CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o" \
+"CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o" \
+"CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o" \
+"CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o" \
+"CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o" \
+"CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o" \
 "CMakeFiles/tiny.dir/lib/log.c.o" \
+"CMakeFiles/tiny.dir/tinyparser.c.o" \
 "CMakeFiles/tiny.dir/tinylexer.c.o"
 
 # External object files for target tiny
 tiny_EXTERNAL_OBJECTS =
 
-tiny: CMakeFiles/tiny.dir/TinyFlex/main.c.o
-tiny: CMakeFiles/tiny.dir/TinyFlex/util.c.o
+tiny: CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o
+tiny: CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o
+tiny: CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o
+tiny: CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o
+tiny: CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o
+tiny: CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o
 tiny: CMakeFiles/tiny.dir/lib/log.c.o
+tiny: CMakeFiles/tiny.dir/tinyparser.c.o
 tiny: CMakeFiles/tiny.dir/tinylexer.c.o
 tiny: CMakeFiles/tiny.dir/build.make
-tiny: /usr/lib/x86_64-linux-gnu/libfl.so
 tiny: CMakeFiles/tiny.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable tiny"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable tiny"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tiny.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -158,6 +245,8 @@ CMakeFiles/tiny.dir/clean:
 .PHONY : CMakeFiles/tiny.dir/clean
 
 CMakeFiles/tiny.dir/depend: tinylexer.c
+CMakeFiles/tiny.dir/depend: tinyparser.c
+CMakeFiles/tiny.dir/depend: tinyparser.h
 	cd /home/marcio/ITA/Bizarro/projeto1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marcio/ITA/Bizarro/projeto1 /home/marcio/ITA/Bizarro/projeto1 /home/marcio/ITA/Bizarro/projeto1/build /home/marcio/ITA/Bizarro/projeto1/build /home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/tiny.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/tiny.dir/depend
 

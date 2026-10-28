@@ -194,53 +194,149 @@ tiny/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/build
 .PHONY : tiny/fast
 
-TinyFlex/main.o: TinyFlex/main.c.o
-.PHONY : TinyFlex/main.o
+TinyGeracaoCodigo/analyze.o: TinyGeracaoCodigo/analyze.c.o
+.PHONY : TinyGeracaoCodigo/analyze.o
 
 # target to build an object file
-TinyFlex/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyFlex/main.c.o
-.PHONY : TinyFlex/main.c.o
+TinyGeracaoCodigo/analyze.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.o
+.PHONY : TinyGeracaoCodigo/analyze.c.o
 
-TinyFlex/main.i: TinyFlex/main.c.i
-.PHONY : TinyFlex/main.i
+TinyGeracaoCodigo/analyze.i: TinyGeracaoCodigo/analyze.c.i
+.PHONY : TinyGeracaoCodigo/analyze.i
 
 # target to preprocess a source file
-TinyFlex/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyFlex/main.c.i
-.PHONY : TinyFlex/main.c.i
+TinyGeracaoCodigo/analyze.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.i
+.PHONY : TinyGeracaoCodigo/analyze.c.i
 
-TinyFlex/main.s: TinyFlex/main.c.s
-.PHONY : TinyFlex/main.s
+TinyGeracaoCodigo/analyze.s: TinyGeracaoCodigo/analyze.c.s
+.PHONY : TinyGeracaoCodigo/analyze.s
 
 # target to generate assembly for a file
-TinyFlex/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyFlex/main.c.s
-.PHONY : TinyFlex/main.c.s
+TinyGeracaoCodigo/analyze.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/analyze.c.s
+.PHONY : TinyGeracaoCodigo/analyze.c.s
 
-TinyFlex/util.o: TinyFlex/util.c.o
-.PHONY : TinyFlex/util.o
+TinyGeracaoCodigo/cgen.o: TinyGeracaoCodigo/cgen.c.o
+.PHONY : TinyGeracaoCodigo/cgen.o
 
 # target to build an object file
-TinyFlex/util.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyFlex/util.c.o
-.PHONY : TinyFlex/util.c.o
+TinyGeracaoCodigo/cgen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.o
+.PHONY : TinyGeracaoCodigo/cgen.c.o
 
-TinyFlex/util.i: TinyFlex/util.c.i
-.PHONY : TinyFlex/util.i
+TinyGeracaoCodigo/cgen.i: TinyGeracaoCodigo/cgen.c.i
+.PHONY : TinyGeracaoCodigo/cgen.i
 
 # target to preprocess a source file
-TinyFlex/util.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyFlex/util.c.i
-.PHONY : TinyFlex/util.c.i
+TinyGeracaoCodigo/cgen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.i
+.PHONY : TinyGeracaoCodigo/cgen.c.i
 
-TinyFlex/util.s: TinyFlex/util.c.s
-.PHONY : TinyFlex/util.s
+TinyGeracaoCodigo/cgen.s: TinyGeracaoCodigo/cgen.c.s
+.PHONY : TinyGeracaoCodigo/cgen.s
 
 # target to generate assembly for a file
-TinyFlex/util.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyFlex/util.c.s
-.PHONY : TinyFlex/util.c.s
+TinyGeracaoCodigo/cgen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/cgen.c.s
+.PHONY : TinyGeracaoCodigo/cgen.c.s
+
+TinyGeracaoCodigo/code.o: TinyGeracaoCodigo/code.c.o
+.PHONY : TinyGeracaoCodigo/code.o
+
+# target to build an object file
+TinyGeracaoCodigo/code.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.o
+.PHONY : TinyGeracaoCodigo/code.c.o
+
+TinyGeracaoCodigo/code.i: TinyGeracaoCodigo/code.c.i
+.PHONY : TinyGeracaoCodigo/code.i
+
+# target to preprocess a source file
+TinyGeracaoCodigo/code.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.i
+.PHONY : TinyGeracaoCodigo/code.c.i
+
+TinyGeracaoCodigo/code.s: TinyGeracaoCodigo/code.c.s
+.PHONY : TinyGeracaoCodigo/code.s
+
+# target to generate assembly for a file
+TinyGeracaoCodigo/code.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/code.c.s
+.PHONY : TinyGeracaoCodigo/code.c.s
+
+TinyGeracaoCodigo/main.o: TinyGeracaoCodigo/main.c.o
+.PHONY : TinyGeracaoCodigo/main.o
+
+# target to build an object file
+TinyGeracaoCodigo/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.o
+.PHONY : TinyGeracaoCodigo/main.c.o
+
+TinyGeracaoCodigo/main.i: TinyGeracaoCodigo/main.c.i
+.PHONY : TinyGeracaoCodigo/main.i
+
+# target to preprocess a source file
+TinyGeracaoCodigo/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.i
+.PHONY : TinyGeracaoCodigo/main.c.i
+
+TinyGeracaoCodigo/main.s: TinyGeracaoCodigo/main.c.s
+.PHONY : TinyGeracaoCodigo/main.s
+
+# target to generate assembly for a file
+TinyGeracaoCodigo/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/main.c.s
+.PHONY : TinyGeracaoCodigo/main.c.s
+
+TinyGeracaoCodigo/symtab.o: TinyGeracaoCodigo/symtab.c.o
+.PHONY : TinyGeracaoCodigo/symtab.o
+
+# target to build an object file
+TinyGeracaoCodigo/symtab.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.o
+.PHONY : TinyGeracaoCodigo/symtab.c.o
+
+TinyGeracaoCodigo/symtab.i: TinyGeracaoCodigo/symtab.c.i
+.PHONY : TinyGeracaoCodigo/symtab.i
+
+# target to preprocess a source file
+TinyGeracaoCodigo/symtab.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.i
+.PHONY : TinyGeracaoCodigo/symtab.c.i
+
+TinyGeracaoCodigo/symtab.s: TinyGeracaoCodigo/symtab.c.s
+.PHONY : TinyGeracaoCodigo/symtab.s
+
+# target to generate assembly for a file
+TinyGeracaoCodigo/symtab.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/symtab.c.s
+.PHONY : TinyGeracaoCodigo/symtab.c.s
+
+TinyGeracaoCodigo/util.o: TinyGeracaoCodigo/util.c.o
+.PHONY : TinyGeracaoCodigo/util.o
+
+# target to build an object file
+TinyGeracaoCodigo/util.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.o
+.PHONY : TinyGeracaoCodigo/util.c.o
+
+TinyGeracaoCodigo/util.i: TinyGeracaoCodigo/util.c.i
+.PHONY : TinyGeracaoCodigo/util.i
+
+# target to preprocess a source file
+TinyGeracaoCodigo/util.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.i
+.PHONY : TinyGeracaoCodigo/util.c.i
+
+TinyGeracaoCodigo/util.s: TinyGeracaoCodigo/util.c.s
+.PHONY : TinyGeracaoCodigo/util.s
+
+# target to generate assembly for a file
+TinyGeracaoCodigo/util.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/TinyGeracaoCodigo/util.c.s
+.PHONY : TinyGeracaoCodigo/util.c.s
 
 lexer.o: lexer.c.o
 .PHONY : lexer.o
@@ -292,6 +388,30 @@ lib/log.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mycmcomp.dir/build.make CMakeFiles/mycmcomp.dir/lib/log.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/lib/log.c.s
 .PHONY : lib/log.c.s
+
+parser.o: parser.c.o
+.PHONY : parser.o
+
+# target to build an object file
+parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mycmcomp.dir/build.make CMakeFiles/mycmcomp.dir/parser.c.o
+.PHONY : parser.c.o
+
+parser.i: parser.c.i
+.PHONY : parser.i
+
+# target to preprocess a source file
+parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mycmcomp.dir/build.make CMakeFiles/mycmcomp.dir/parser.c.i
+.PHONY : parser.c.i
+
+parser.s: parser.c.s
+.PHONY : parser.s
+
+# target to generate assembly for a file
+parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mycmcomp.dir/build.make CMakeFiles/mycmcomp.dir/parser.c.s
+.PHONY : parser.c.s
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
@@ -365,6 +485,30 @@ tinylexer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/tinylexer.c.s
 .PHONY : tinylexer.c.s
 
+tinyparser.o: tinyparser.c.o
+.PHONY : tinyparser.o
+
+# target to build an object file
+tinyparser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/tinyparser.c.o
+.PHONY : tinyparser.c.o
+
+tinyparser.i: tinyparser.c.i
+.PHONY : tinyparser.i
+
+# target to preprocess a source file
+tinyparser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/tinyparser.c.i
+.PHONY : tinyparser.c.i
+
+tinyparser.s: tinyparser.c.s
+.PHONY : tinyparser.s
+
+# target to generate assembly for a file
+tinyparser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tiny.dir/build.make CMakeFiles/tiny.dir/tinyparser.c.s
+.PHONY : tinyparser.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -379,18 +523,33 @@ help:
 	@echo "... runmycmcomp"
 	@echo "... mycmcomp"
 	@echo "... tiny"
-	@echo "... TinyFlex/main.o"
-	@echo "... TinyFlex/main.i"
-	@echo "... TinyFlex/main.s"
-	@echo "... TinyFlex/util.o"
-	@echo "... TinyFlex/util.i"
-	@echo "... TinyFlex/util.s"
+	@echo "... TinyGeracaoCodigo/analyze.o"
+	@echo "... TinyGeracaoCodigo/analyze.i"
+	@echo "... TinyGeracaoCodigo/analyze.s"
+	@echo "... TinyGeracaoCodigo/cgen.o"
+	@echo "... TinyGeracaoCodigo/cgen.i"
+	@echo "... TinyGeracaoCodigo/cgen.s"
+	@echo "... TinyGeracaoCodigo/code.o"
+	@echo "... TinyGeracaoCodigo/code.i"
+	@echo "... TinyGeracaoCodigo/code.s"
+	@echo "... TinyGeracaoCodigo/main.o"
+	@echo "... TinyGeracaoCodigo/main.i"
+	@echo "... TinyGeracaoCodigo/main.s"
+	@echo "... TinyGeracaoCodigo/symtab.o"
+	@echo "... TinyGeracaoCodigo/symtab.i"
+	@echo "... TinyGeracaoCodigo/symtab.s"
+	@echo "... TinyGeracaoCodigo/util.o"
+	@echo "... TinyGeracaoCodigo/util.i"
+	@echo "... TinyGeracaoCodigo/util.s"
 	@echo "... lexer.o"
 	@echo "... lexer.i"
 	@echo "... lexer.s"
 	@echo "... lib/log.o"
 	@echo "... lib/log.i"
 	@echo "... lib/log.s"
+	@echo "... parser.o"
+	@echo "... parser.i"
+	@echo "... parser.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -400,6 +559,9 @@ help:
 	@echo "... tinylexer.o"
 	@echo "... tinylexer.i"
 	@echo "... tinylexer.s"
+	@echo "... tinyparser.o"
+	@echo "... tinyparser.i"
+	@echo "... tinyparser.s"
 .PHONY : help
 
 

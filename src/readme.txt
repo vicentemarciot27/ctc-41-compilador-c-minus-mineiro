@@ -22,3 +22,15 @@ notas desta entrega (compilador C- mineiro)
 * printLine() é declarada em util.h e definida em util.c.
   Sem essa declaração, cminus.l compila a chamada como
   declaração implícita (warning em C17, erro em C23).
+
+-----------------------------------------------------------
+etapa SYN (análise sintática)
+
+* cminus.y implementa a gramática C- com Bison e constrói a árvore
+  sintática. Inclui declarações e comandos intercalados, blocos aninhados
+  e subtração unária, conforme as instruções do laboratório.
+* globals.h define os nós da árvore; util.c cria e imprime esses nós.
+* main.c executa LEX e SYN. As etapas TAB e GEN ficam desativadas
+  até suas implementações.
+* Para compilar com CMake, use -DDOPARSE=TRUE. Flex e Bison geram os
+  arquivos lexer.c e parser.c no diretório de build, fora de src/.

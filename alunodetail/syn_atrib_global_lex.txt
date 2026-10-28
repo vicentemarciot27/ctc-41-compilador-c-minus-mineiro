@@ -4,7 +4,5 @@
 	1: ;
 2: x = 1; /* errado -> fora de uma funcao */
 	2: ID, name= x
-	2: =
-	2: NUM, val= 1
-	2: ;
-	2: EOF
+Syntax error at line 2: syntax error
+Current token: ID, name= x

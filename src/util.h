@@ -22,6 +22,7 @@ TreeNode * newStmtNode(StmtKind);
  * node for syntax tree construction
  */
 TreeNode * newExpNode(ExpKind);
+TreeNode * newDeclNode(DeclKind);
 
 /* Function copyString allocates and makes a new
  * copy of an existing string

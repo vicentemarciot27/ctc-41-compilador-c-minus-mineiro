@@ -62,6 +62,7 @@ CMakeFiles/mycmcomp.dir/lexer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/marcio/ITA/Bizarro/projeto1/src/globals.h /usr/include/ctype.h \
  /home/marcio/ITA/Bizarro/projeto1/lib/log.h \
+ /home/marcio/ITA/Bizarro/projeto1/build/parser.h \
  /home/marcio/ITA/Bizarro/projeto1/src/util.h \
  /home/marcio/ITA/Bizarro/projeto1/src/scan.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \

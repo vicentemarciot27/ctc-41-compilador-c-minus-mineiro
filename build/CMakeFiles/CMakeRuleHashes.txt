@@ -4,4 +4,6 @@ d821d854b727b7ec140f6b7fdb567909 CMakeFiles/lexdiff
 59d6a53505ebf506663f209bfd2f98a5 CMakeFiles/rundiff
 b28062f454c50da4b54f5e2f56374283 CMakeFiles/runmycmcomp
 6aa19674bd9e98caf9d2b4b698c4d807 lexer.c
-01e41218a6ae5a99253c3791ad878d2c tinylexer.c
+9b828b329d9737b0322f07ed8d5e5f8b parser.c
+beaffdc28c269fbd95894aa7a5d36435 tinylexer.c
+01c03e2ebc68273bbc367a188203842a tinyparser.c

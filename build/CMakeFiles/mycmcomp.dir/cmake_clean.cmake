@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mycmcomp.dir/lexer.c.o.d"
   "CMakeFiles/mycmcomp.dir/lib/log.c.o"
   "CMakeFiles/mycmcomp.dir/lib/log.c.o.d"
+  "CMakeFiles/mycmcomp.dir/parser.c.o"
+  "CMakeFiles/mycmcomp.dir/parser.c.o.d"
   "CMakeFiles/mycmcomp.dir/src/main.c.o"
   "CMakeFiles/mycmcomp.dir/src/main.c.o.d"
   "CMakeFiles/mycmcomp.dir/src/util.c.o"
@@ -10,6 +12,8 @@ file(REMOVE_RECURSE
   "lexer.c"
   "mycmcomp"
   "mycmcomp.pdb"
+  "parser.c"
+  "parser.h"
 )
 
 # Per-language clean rules from dependency scanning.

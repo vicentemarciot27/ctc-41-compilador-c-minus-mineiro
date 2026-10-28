@@ -35,3 +35,15 @@ COMPILATION: ../example/function_call_array_testcode.cm
 8: }
 	8: }
 	8: EOF
+
+Syntax tree:
+Declare function (return type "int"): f
+    Function param (int var): u
+    Function param (int array): v
+    Return
+        Op: +
+            Function call: g
+                Id: v
+                    Const: 3
+                Const: 3
+            Id: u

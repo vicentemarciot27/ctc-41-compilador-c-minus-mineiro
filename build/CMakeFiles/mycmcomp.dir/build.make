@@ -69,14 +69,21 @@ include CMakeFiles/mycmcomp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/mycmcomp.dir/flags.make
 
+parser.c: /home/marcio/ITA/Bizarro/projeto1/src/cminus.y
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[BISON][myparser] Building parser with bison 3.8.2"
+	cd /home/marcio/ITA/Bizarro/projeto1 && /usr/bin/bison -d -o /home/marcio/ITA/Bizarro/projeto1/build/parser.c src/cminus.y
+
+parser.h: parser.c
+	@$(CMAKE_COMMAND) -E touch_nocreate parser.h
+
 lexer.c: /home/marcio/ITA/Bizarro/projeto1/src/cminus.l
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[FLEX][scanner] Building scanner with flex 2.6.4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "[FLEX][scanner] Building scanner with flex 2.6.4"
 	cd /home/marcio/ITA/Bizarro/projeto1 && /usr/bin/flex -o/home/marcio/ITA/Bizarro/projeto1/build/lexer.c src/cminus.l
 
 CMakeFiles/mycmcomp.dir/src/main.c.o: CMakeFiles/mycmcomp.dir/flags.make
 CMakeFiles/mycmcomp.dir/src/main.c.o: /home/marcio/ITA/Bizarro/projeto1/src/main.c
 CMakeFiles/mycmcomp.dir/src/main.c.o: CMakeFiles/mycmcomp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mycmcomp.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mycmcomp.dir/src/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mycmcomp.dir/src/main.c.o -MF CMakeFiles/mycmcomp.dir/src/main.c.o.d -o CMakeFiles/mycmcomp.dir/src/main.c.o -c /home/marcio/ITA/Bizarro/projeto1/src/main.c
 
 CMakeFiles/mycmcomp.dir/src/main.c.i: cmake_force
@@ -90,7 +97,7 @@ CMakeFiles/mycmcomp.dir/src/main.c.s: cmake_force
 CMakeFiles/mycmcomp.dir/src/util.c.o: CMakeFiles/mycmcomp.dir/flags.make
 CMakeFiles/mycmcomp.dir/src/util.c.o: /home/marcio/ITA/Bizarro/projeto1/src/util.c
 CMakeFiles/mycmcomp.dir/src/util.c.o: CMakeFiles/mycmcomp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mycmcomp.dir/src/util.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mycmcomp.dir/src/util.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mycmcomp.dir/src/util.c.o -MF CMakeFiles/mycmcomp.dir/src/util.c.o.d -o CMakeFiles/mycmcomp.dir/src/util.c.o -c /home/marcio/ITA/Bizarro/projeto1/src/util.c
 
 CMakeFiles/mycmcomp.dir/src/util.c.i: cmake_force
@@ -104,7 +111,7 @@ CMakeFiles/mycmcomp.dir/src/util.c.s: cmake_force
 CMakeFiles/mycmcomp.dir/lib/log.c.o: CMakeFiles/mycmcomp.dir/flags.make
 CMakeFiles/mycmcomp.dir/lib/log.c.o: /home/marcio/ITA/Bizarro/projeto1/lib/log.c
 CMakeFiles/mycmcomp.dir/lib/log.c.o: CMakeFiles/mycmcomp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mycmcomp.dir/lib/log.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mycmcomp.dir/lib/log.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mycmcomp.dir/lib/log.c.o -MF CMakeFiles/mycmcomp.dir/lib/log.c.o.d -o CMakeFiles/mycmcomp.dir/lib/log.c.o -c /home/marcio/ITA/Bizarro/projeto1/lib/log.c
 
 CMakeFiles/mycmcomp.dir/lib/log.c.i: cmake_force
@@ -115,10 +122,25 @@ CMakeFiles/mycmcomp.dir/lib/log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/mycmcomp.dir/lib/log.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/lib/log.c -o CMakeFiles/mycmcomp.dir/lib/log.c.s
 
+CMakeFiles/mycmcomp.dir/parser.c.o: CMakeFiles/mycmcomp.dir/flags.make
+CMakeFiles/mycmcomp.dir/parser.c.o: parser.c
+CMakeFiles/mycmcomp.dir/parser.c.o: CMakeFiles/mycmcomp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/mycmcomp.dir/parser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mycmcomp.dir/parser.c.o -MF CMakeFiles/mycmcomp.dir/parser.c.o.d -o CMakeFiles/mycmcomp.dir/parser.c.o -c /home/marcio/ITA/Bizarro/projeto1/build/parser.c
+
+CMakeFiles/mycmcomp.dir/parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/mycmcomp.dir/parser.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/marcio/ITA/Bizarro/projeto1/build/parser.c > CMakeFiles/mycmcomp.dir/parser.c.i
+
+CMakeFiles/mycmcomp.dir/parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/mycmcomp.dir/parser.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/marcio/ITA/Bizarro/projeto1/build/parser.c -o CMakeFiles/mycmcomp.dir/parser.c.s
+
 CMakeFiles/mycmcomp.dir/lexer.c.o: CMakeFiles/mycmcomp.dir/flags.make
 CMakeFiles/mycmcomp.dir/lexer.c.o: lexer.c
+CMakeFiles/mycmcomp.dir/lexer.c.o: parser.h
 CMakeFiles/mycmcomp.dir/lexer.c.o: CMakeFiles/mycmcomp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mycmcomp.dir/lexer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/mycmcomp.dir/lexer.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mycmcomp.dir/lexer.c.o -MF CMakeFiles/mycmcomp.dir/lexer.c.o.d -o CMakeFiles/mycmcomp.dir/lexer.c.o -c /home/marcio/ITA/Bizarro/projeto1/build/lexer.c
 
 CMakeFiles/mycmcomp.dir/lexer.c.i: cmake_force
@@ -134,6 +156,7 @@ mycmcomp_OBJECTS = \
 "CMakeFiles/mycmcomp.dir/src/main.c.o" \
 "CMakeFiles/mycmcomp.dir/src/util.c.o" \
 "CMakeFiles/mycmcomp.dir/lib/log.c.o" \
+"CMakeFiles/mycmcomp.dir/parser.c.o" \
 "CMakeFiles/mycmcomp.dir/lexer.c.o"
 
 # External object files for target mycmcomp
@@ -142,11 +165,11 @@ mycmcomp_EXTERNAL_OBJECTS =
 mycmcomp: CMakeFiles/mycmcomp.dir/src/main.c.o
 mycmcomp: CMakeFiles/mycmcomp.dir/src/util.c.o
 mycmcomp: CMakeFiles/mycmcomp.dir/lib/log.c.o
+mycmcomp: CMakeFiles/mycmcomp.dir/parser.c.o
 mycmcomp: CMakeFiles/mycmcomp.dir/lexer.c.o
 mycmcomp: CMakeFiles/mycmcomp.dir/build.make
-mycmcomp: /usr/lib/x86_64-linux-gnu/libfl.so
 mycmcomp: CMakeFiles/mycmcomp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable mycmcomp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable mycmcomp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mycmcomp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -158,6 +181,8 @@ CMakeFiles/mycmcomp.dir/clean:
 .PHONY : CMakeFiles/mycmcomp.dir/clean
 
 CMakeFiles/mycmcomp.dir/depend: lexer.c
+CMakeFiles/mycmcomp.dir/depend: parser.c
+CMakeFiles/mycmcomp.dir/depend: parser.h
 	cd /home/marcio/ITA/Bizarro/projeto1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marcio/ITA/Bizarro/projeto1 /home/marcio/ITA/Bizarro/projeto1 /home/marcio/ITA/Bizarro/projeto1/build /home/marcio/ITA/Bizarro/projeto1/build /home/marcio/ITA/Bizarro/projeto1/build/CMakeFiles/mycmcomp.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/mycmcomp.dir/depend
 
